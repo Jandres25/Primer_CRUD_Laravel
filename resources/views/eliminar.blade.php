@@ -5,24 +5,25 @@
 @section('contenido')
     <div class="d-flex justify-content-center align-items-center" style="height: 80vh">
         <div class="alert alert-danger" role="alert">
-            <h5 >¿Está seguro que desea eliminar el registro?</h5>
-            
+            <h5>¿Está seguro que desea eliminar el registro?</h5>
+
             <ul class="list-group list-group-flush mt-3">
                 <li class="list-group-item list-group-item-danger">
                     <b>Nombre:</b> {{ $persona->nombre }}
                 </li>
                 <li class="list-group-item list-group-item-danger">
-                    <b>Apellido Paterno:</b> {{$persona->paterno}}
+                    <b>Apellido Paterno:</b> {{ $persona->paterno }}
                 </li>
                 <li class="list-group-item list-group-item-danger">
-                    <b>Apellido Materno:</b> {{$persona->materno}}
+                    <b>Apellido Materno:</b> {{ $persona->materno }}
                 </li>
                 <li class="list-group-item list-group-item-danger">
-                    <b>Fecha de nacimiento:</b> {{$persona->fecha_nacimiento}}
+                    <b>Fecha de nacimiento:</b> {{ $persona->fecha_nacimiento }}
                 </li>
             </ul>
-            
-            <form class="d-flex justify-content-around mt-4" action="{{ route('personas.destroy', $persona->id) }}" method="GET">
+
+            <form class="d-flex justify-content-around mt-4" action="{{ route('personas.destroy', $persona->id) }}"
+                method="GET">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">
@@ -34,7 +35,7 @@
             </form>
         </div>
     </div>
-    
+
     {{-- <h4 class="card-header">Confirmar eliminación</h4>
     <div class="card-body">
         <p>¿Estás seguro de que deseas eliminar a {{ $persona->nombre }} {{ $persona->paterno }} {{ $persona->materno }}?</p>

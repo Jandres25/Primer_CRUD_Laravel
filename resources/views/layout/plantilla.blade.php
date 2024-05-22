@@ -1,5 +1,5 @@
 @include('templates.header')
-  <section class="container mt-4">
+<section class="container mt-4">
     @yield('contenido')
-  </section>
+</section>
 @include('templates.footer')
