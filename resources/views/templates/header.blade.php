@@ -12,17 +12,15 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
 
-        main {
-            flex-grow: 1;
-        }
-    </style>
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('codigo-php.png') }}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 
 <body>
@@ -30,16 +28,18 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="/">Laravel</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <a class="navbar-brand" href="{{ route('home.index') }}">Laravel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Principal</a>
+                            <a class="nav-link" href="{{ route('home.index') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('personas.index') }}">People</a>
                         </li>
                     </ul>
                 </div>

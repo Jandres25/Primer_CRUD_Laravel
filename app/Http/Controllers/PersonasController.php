@@ -13,7 +13,7 @@ class PersonasController extends Controller
     public function index()
     {
         $datos = Personas::all();
-        return view('inicio', compact('datos'));
+        return view('people.index', compact('datos'));
     }
 
     /**
@@ -21,7 +21,7 @@ class PersonasController extends Controller
      */
     public function create()
     {
-        return view('agregar');
+        return view('people.create');
     }
 
     /**
@@ -47,7 +47,6 @@ class PersonasController extends Controller
     public function show(Personas $personas)
     {
         //
-        return view('eliminar');
     }
 
     /**
@@ -56,7 +55,7 @@ class PersonasController extends Controller
     public function edit($id)
     {
         $persona = Personas::find($id);
-        return view('actualizar', compact('persona'));
+        return view('people.edit', compact('persona'));
     }
 
     /**
@@ -74,12 +73,6 @@ class PersonasController extends Controller
         $personas->save();
 
         return redirect()->route('personas.index')->with('success', '¡Registro Actualizado Exitosamente!');
-    }
-
-    public function confirmarEliminacion($id)
-    {
-        $persona = Personas::find($id);
-        return view('eliminar', compact('persona'));
     }
 
     /**
